@@ -1,0 +1,59 @@
+from tkinter import *
+import tkinter.font
+import RPi.GPIO as GPIO
+from gpiozero import LED
+import time
+
+
+GPIO.setmode(GPIO.BCM)
+
+blueled = LED(10)
+greenled = LED(14)
+redled = LED(18)
+
+window = tkinter.Tk()
+window.title("Coloured LED Blinker Switch")
+myFont = (tkinter.font.Font(family = 'Comic Sans MS', size = 20))
+
+
+def ledToggleOne():
+  if blueled.is_lit:
+      blueled.off()
+      ledButtonOne["text"] = "Blue LED on"
+  else:
+      blueled.on()
+      ledButtonOne["text"] = "Blue LED off"
+      
+      
+  def ledToggleTwo():
+    if greenled.is_lit:
+      greenled.off()
+      ledButtonTwo["text"] = "Green LED on"
+    else:
+      greenled.on()
+      ledButtonTwo["text"] = "Green LED off"
+      
+      
+      
+      
+def ledToggleThree():
+  if redled.is_lit:
+     redled.off()
+      ledButtonOne["text"] = "Red LED on"
+  else:
+      redled.on()
+      ledButtonThree["text"] = "Red LED off"
+      
+      
+      
+ledbuttonOne = Button(window, text="Blue LED on!", command = ledToggleOne, font=myFont, height = 1, width = 25)
+ledButtonOne.grid(row = 0, column = 1)
+  
+ledbuttonTwo = Button(window, text="Green LED on!", command = ledToggleTwo, font=myFont, height = 1, width = 25)
+ledButtonTwo.grid(row = 0, column = 2)
+
+ledbuttonThree = Button(window, text="Red LED on!", command = ledToggleThree, font=myFont, height = 1, width = 25)
+ledButtonThree.grid(row = 0, column = 3)
+
+window.protocol("WM_DELETE_WINDOW")
+window.mainloop()
