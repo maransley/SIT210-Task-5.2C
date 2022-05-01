@@ -44,13 +44,13 @@ def ledToggleThree():
       
       
       
-ledbuttonOne = Button(window, text= "Blue LED on!", command = ledToggleOne, font=myFont, height = 1, width = 25)
+ledbuttonOne = Button(window, text= "Blue LED on!", command = ledToggleOne, font=myFont, height = 1, width = 20)
 ledButtonOne.grid(row = 0, column = 1)
   
-ledbuttonTwo = Button(window, text= "Green LED on!", command = ledToggleTwo, font=myFont, height = 1, width = 25)
+ledbuttonTwo = Button(window, text= "Green LED on!", command = ledToggleTwo, font=myFont, height = 1, width = 20)
 ledButtonTwo.grid(row = 0, column = 2)
 
-ledbuttonThree = Button(window, text= "Red LED on!", command = ledToggleThree, font=myFont, height = 1, width = 25)
+ledbuttonThree = Button(window, text= "Red LED on!", command = ledToggleThree, font=myFont, height = 1, width = 20)
 ledButtonThree.grid(row = 0, column = 3)
 
 window.protocol("WM_DELETE_WINDOW")
