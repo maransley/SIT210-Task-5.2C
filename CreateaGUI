@@ -25,34 +25,32 @@ def ledToggleOne():
       ledButtonOne["text"] = "Blue LED off"
       
       
-  def ledToggleTwo():
+def ledToggleTwo():
     if greenled.is_lit:
       greenled.off()
       ledButtonTwo["text"] = "Green LED on"
     else:
       greenled.on()
       ledButtonTwo["text"] = "Green LED off"
-      
-      
-      
+        
       
 def ledToggleThree():
-  if redled.is_lit:
-     redled.off()
-      ledButtonOne["text"] = "Red LED on"
+      if redled.is_lit:
+      redled.off()
+      ledButtonThree["text"] = "Red LED on"
   else:
       redled.on()
       ledButtonThree["text"] = "Red LED off"
       
       
       
-ledbuttonOne = Button(window, text="Blue LED on!", command = ledToggleOne, font=myFont, height = 1, width = 25)
+ledbuttonOne = Button(window, text= "Blue LED on!", command = ledToggleOne, font=myFont, height = 1, width = 25)
 ledButtonOne.grid(row = 0, column = 1)
   
-ledbuttonTwo = Button(window, text="Green LED on!", command = ledToggleTwo, font=myFont, height = 1, width = 25)
+ledbuttonTwo = Button(window, text= "Green LED on!", command = ledToggleTwo, font=myFont, height = 1, width = 25)
 ledButtonTwo.grid(row = 0, column = 2)
 
-ledbuttonThree = Button(window, text="Red LED on!", command = ledToggleThree, font=myFont, height = 1, width = 25)
+ledbuttonThree = Button(window, text= "Red LED on!", command = ledToggleThree, font=myFont, height = 1, width = 25)
 ledButtonThree.grid(row = 0, column = 3)
 
 window.protocol("WM_DELETE_WINDOW")
